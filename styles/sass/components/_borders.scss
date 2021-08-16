@@ -1,0 +1,39 @@
+/**
+ * Border utility classes
+ */
+
+/* border styles */
+@include generate_class_selectors_from_map($border-style-selector);
+
+/* border top styles */
+@include generate_class_selectors_from_map($border-top-style-selector);
+
+/* border bottom styles */
+@include generate_class_selectors_from_map($border-bottom-style-selector);
+
+/* border left styles */
+@include generate_class_selectors_from_map($border-left-style-selector);
+
+/* border right styles */
+@include generate_class_selectors_from_map($border-right-style-selector);
+
+/* border widths */ 
+@include generate_class_selectors_from_map($border-width-selector);
+
+/* border colors */ 
+@include generate_class_selectors_from_map($border-color-selector);
+
+/* border radius */
+@include generate_class_selectors_from_map($border-radius-selector);
+
+.border-radius-circular {
+  border-radius: 100%;
+}
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+  @media screen and (min-width: $breakpoint-value) {
+    .border-radius-circular_#{$breakpoint-key} { 
+      border-radius: 100%;
+    }
+  }
+}

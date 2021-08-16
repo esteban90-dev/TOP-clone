@@ -1,0 +1,6 @@
+/**
+ * Lists utility classes
+ */
+
+ @include generate_class_selectors_from_map($list-style-selector);
+ @include generate_class_selectors_from_map($list-position-selector);

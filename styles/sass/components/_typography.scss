@@ -1,0 +1,65 @@
+/**
+ * Typography utility classes
+ */
+
+
+ /* sans-serif typeface */
+.sans-serif {
+  font-family: $font-family-sans-serif;
+}
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+  @media screen and (min-width: $breakpoint-value) {
+    .sans-serif_#{$breakpoint-key} { 
+      font-family: $font-family-sans-serif;
+    }
+  }
+}
+
+/* serif typeface */
+.serif {
+  font-family: $font-family-serif;
+}
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+  @media screen and (min-width: $breakpoint-value) {
+    .serif_#{$breakpoint-key} { 
+      font-family: $font-family-serif;
+    }
+  }
+}
+
+/* sans-serif typeface */
+.mono {
+  font-family: $font-family-mono;
+}
+
+@each $breakpoint-key, $breakpoint-value in $breakpoints {
+  @media screen and (min-width: $breakpoint-value) {
+    .mono_#{$breakpoint-key} { 
+      font-family: $font-family-mono;
+    }
+  }
+}
+
+/* type scale - headers */
+@include generate_class_selectors_from_map($font-size-selector);
+
+/* type scale - small text sizes */ 
+@include generate_class_selectors_from_map($small-font-size-selector);
+
+/* line height */
+@include generate_class_selectors_from_map($line-height-selector);
+
+/* font-weight */
+@include generate_class_selectors_from_map($font-weight-selector);
+
+/* font-styles */
+@include generate_class_selectors_from_map($font-style-selector);
+
+/* text-alignments */
+@include generate_class_selectors_from_map($text-alignment-selector);
+
+/* text-colors */
+@include generate_class_selectors_from_map($text-color-selector);
+
